@@ -1,0 +1,310 @@
+/* Reset-ish */
+*{box-sizing:border-box}
+:root{
+  --bg:#0e0f14;
+  --fg:#e7ebff;
+  --muted:#a7b0d1;
+  --accent:#6cb4ff;
+  --card:#171923;
+  --pixel:#2b2f44;
+  --success:#6aff9b;
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--fg);
+  background:linear-gradient(180deg,#0b0d13 0%, #111427 100%);
+}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 18px; background:rgba(10,12,20,.7); backdrop-filter: blur(8px);
+  border-bottom:1px solid #1e2133;
+}
+.brand{font-family:"Press Start 2P", monospace; letter-spacing:1px}
+.blink{animation:blink 1.2s steps(2,end) infinite}
+@keyframes blink{50%{opacity:0}}
+nav a{color:var(--muted); text-decoration:none; margin-left:12px; font-size:.95rem}
+nav a:hover{color:var(--fg)}
+
+/* Sections */
+.section{padding:64px 20px; max-width:1100px; margin:0 auto; position:relative}
+.center{text-align:center}
+.section-title{font-family:"Press Start 2P", monospace; text-transform:uppercase; letter-spacing:2px; margin-bottom:18px}
+
+/* Cards */
+.card{background:var(--card); border:1px solid #22263b; border-radius:16px; padding:24px}
+.pixel{image-rendering:pixelated;}
+
+/* Hero */
+.profile-img{width:220px; height:auto; cursor:pointer; display:block; margin:0 auto 12px; image-rendering:pixelated; border-radius:8px; border:3px solid #2a2e47;}
+.nyc-line{margin:6px 0 0}
+.link-nyc{color:var(--accent); border-bottom:1px dotted var(--accent);}
+.link-nyc:hover{opacity:.9}
+
+/* Modal */
+.modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.65)}
+.modal.hidden{display:none}
+.modal-content{background:#000; border:1px solid #333; padding:8px; border-radius:12px; max-width:90vw; max-height:85vh}
+.modal-content img{max-width:85vw; max-height:75vh; display:block}
+.close{position:absolute; margin-top:-36px; margin-left:-36px; width:34px; height:34px; border-radius:50%; border:1px solid #444; background:#111; color:#eee; cursor:pointer}
+
+/* Desc section with pixel rabbit background */
+.desc-section{
+  --tile: 120px;
+  background:
+    /* carrots */
+    radial-gradient(circle at 20% 30%, #ffb347 0 8px, transparent 9px) 0 0/var(--tile) var(--tile),
+    radial-gradient(circle at 70% 70%, #ffa94d 0 8px, transparent 9px) calc(var(--tile)/2) calc(var(--tile)/2)/var(--tile) var(--tile),
+    /* soil stripes */
+    repeating-linear-gradient(90deg,#1a1f2e 0 40px,#161a27 40px 80px);
+  position:relative;
+  overflow:hidden;
+}
+.desc-card{background:rgba(12,14,24,.78); border:1px solid #262b44; padding:22px; border-radius:16px; line-height:1.7; font-size:1.05rem}
+/* simple pixel rabbit sprite made from box-shadows chewing */
+.desc-section::before{
+  content:"";
+  position:absolute; left:8%; bottom:10%;
+  width:8px; height:8px;
+  background:#fff;
+  box-shadow:
+    8px 0 #fff, 16px 0 #fff, 24px 0 #fff, 32px 0 #fff,
+    0 8px #fff, 8px 8px #fff, 16px 8px #000, 24px 8px #fff, 32px 8px #fff,
+    0 16px #fff, 8px 16px #fff, 16px 16px #fff, 24px 16px #fff, 32px 16px #fff,
+    8px 24px #fff, 16px 24px #fff, 24px 24px #fff,
+    16px 32px #fff;
+  image-rendering:pixelated;
+  transform:scale(2.2);
+  animation:chew 1.2s infinite steps(2);
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.15));
+}
+@keyframes chew{50%{transform:scale(2.2) translateY(-1px)}}
+
+/* Say Hi button */
+.say-hi{display:inline-block; padding:16px 26px; border-radius:14px; background:#1d2339; border:2px solid #2c355a; color:#fff; text-decoration:none; font-weight:800; box-shadow:0 8px 0 #0b0f1f; transition:transform .1s}
+.say-hi:hover{transform:translateY(-2px)}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes wobble{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Tabs */
+.tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px}
+.tab-btn{padding:10px 14px; border-radius:10px; border:1px solid #2b3150; background:#151a2a; color:#d5dcff; cursor:pointer; font-weight:700}
+.tab-btn.active{background:#0e1322; outline:2px solid #4c78ff}
+.tab-panels{background:#0e1220; border:1px solid #232845; border-radius:14px; padding:20px}
+.tab-panel{display:none}
+.tab-panel.show{display:block}
+.bullet{line-height:1.8}
+
+/* Future background (futuristic / Doraemon‑ish vibes without IP) */
+.future-bg{
+  background:
+   radial-gradient(1000px 300px at 80% -10%, rgba(108,180,255,.25), transparent 60%),
+   radial-gradient(800px 300px at 10% 110%, rgba(155,255,233,.2), transparent 60%);
+  position:relative;
+  overflow:hidden;
+}
+.future-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    repeating-linear-gradient(120deg, rgba(108,180,255,.12), rgba(108,180,255,.12) 2px, transparent 2px, transparent 8px),
+    radial-gradient(circle at 30% 70%, rgba(255,255,255,.06), transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(255,255,255,.08), transparent 45%);
+  animation:floatGrid 12s linear infinite;
+  pointer-events:none;
+}
+@keyframes floatGrid{to{transform:translateX(40px)}}
+
+/* Education pixel banner */
+.edu-card{position:relative; overflow:hidden; background:#0e1220; border:1px solid #222844; border-radius:16px}
+.pixel-banner{font-family:"Press Start 2P"; color:#8bb9ff; white-space:nowrap; padding:12px 0; background:#0a0e1b; border-bottom:1px solid #1e2540; animation:marquee 18s linear infinite}
+.pixel-banner span{padding-left:100%}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.edu-text{padding:16px 18px}
+
+/* Projects */
+.projects-section .project{border:1px solid #23284a; border-radius:16px; padding:16px 18px; background:#0d1221; margin-bottom:18px; position:relative; overflow:hidden}
+.projects-section .project h3 a{color:#cfe2ff; text-decoration:none; border-bottom:1px dotted #8fb2ff}
+.projects-section .project p{color:#c7d0ef}
+
+/* Taxi road animation */
+.road{position:relative; height:60px; margin-top:12px; background:linear-gradient(#2a2f44, #232844); border-radius:10px; overflow:hidden; border:1px solid #2e3456}
+.road::before{content:""; position:absolute; inset:0; background:repeating-linear-gradient(90deg, transparent 0 40px, rgba(255,255,255,.55) 40px 50px, transparent 50px 90px); top:28px; height:4px}
+.taxi{position:absolute; width:46px; height:24px; top:12px; left:-60px; background:#ffd300; border:2px solid #333; border-radius:4px; animation:drive 6s linear infinite}
+.taxi::before{content:""; position:absolute; width:18px; height:14px; top:2px; left:6px; background:#111; border:2px solid #222; border-radius:2px}
+.taxi::after{content:""; position:absolute; width:8px; height:8px; background:#111; border:2px solid #222; border-radius:50%; bottom:-8px; left:8px; box-shadow:20px 0 0 0 #111, 20px 0 0 2px #222}
+.taxi.delay{animation-delay:2.5s}
+@keyframes drive{0%{left:-60px}100%{left:110%}}
+
+/* Companies background (subtle grid + logos like blocks) */
+.companies-bg::after{
+  content:""; position:absolute; inset:0; background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 2px, transparent 2px 28px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 2px, transparent 2px 28px);
+  pointer-events:none;
+}
+
+/* Netflix pixel background */
+.netflix-bg{background:linear-gradient(180deg,#090909,#111);}
+.netflix-bg::after{
+  content:"N N N N N N N"; position:absolute; right:10px; bottom:-10px; font-family:"Press Start 2P"; font-size:48px; color:rgba(255,0,0,.08); letter-spacing:20px; transform:rotate(-20deg);
+}
+
+/* Volunteering shirts line */
+.shirt-line{display:flex; gap:12px; margin-top:12px}
+.shirt{background:#123; color:#aee; border:2px solid #2d4a7a; border-radius:6px; padding:8px 10px; font-family:"Press Start 2P"; animation:bob 3s ease-in-out infinite}
+.shirt:nth-child(2){animation-delay:.6s}.shirt:nth-child(3){animation-delay:1.2s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Footer */
+.site-footer{padding:40px 20px; text-align:center; color:#9fb3ff}
+
+
+/* Glowing links */
+a{color:var(--accent); text-decoration:none}
+a:hover{color:#fff; text-shadow:0 0 10px var(--accent)}
+
+/* Brand link inherits glow */
+.brand-link{color:#e7ebff; text-decoration:none}
+.brand-link:hover{color:#fff; text-shadow:0 0 10px #6cb4ff}
+
+/* Profile rabbits background */
+.rabbits-layer{position:relative; overflow:hidden}
+.rabbits-layer::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,.7) 0 2px, transparent 3px) 0 0/40px 40px,
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.7) 0 2px, transparent 3px) 20px 20px/40px 40px;
+  opacity:.25; animation:rabbits-move 14s linear infinite;
+  pointer-events:none;
+}
+@keyframes rabbits-move{to{transform:translateX(60px)}}
+.tiny-caption{font-size:.85rem; color:#a8b5ff; margin-top:6px;}
+
+/* Roles line above NYC sentence */
+.roles-line{margin:6px 0 6px; font-weight:800; color:#cfe2ff}
+
+/* Publications */
+.publications-section .pub-card{border:1px solid #23284a; border-radius:16px; padding:16px 18px; background:#0d1221; margin-bottom:18px; position:relative; overflow:hidden}
+.hospital-anim::after{
+  content:""; position:absolute; left:-80px; bottom:12px; width:70px; height:30px;
+  background:linear-gradient(#e00,#a00); border:2px solid #300; border-radius:4px;
+  box-shadow: 0 0 0 2px #fff inset;
+  animation:ambulance-drive 10s linear infinite;
+}
+.hospital-anim::before{
+  content:""; position:absolute; left:-70px; bottom:18px; width:10px; height:10px; background:#fff; border-radius:50%;
+  animation:siren 1s linear infinite;
+}
+@keyframes ambulance-drive{0%{left:-90px}100%{left:110%}}
+@keyframes siren{0%,100%{opacity:1}50%{opacity:.2}}
+
+.plane-anim::after{
+  content:"✈"; position:absolute; right:-40px; top:10px; font-size:28px; opacity:.7; transform:rotate(-10deg);
+  animation:plane-fly 14s linear infinite;
+}
+@keyframes plane-fly{0%{right:-40px; top:10px}100%{right:110%; top:-20px}}
+
+.dna-anim::after{
+  content:""; position:absolute; inset:0;
+  background:repeating-linear-gradient(90deg, rgba(108,180,255,.06) 0 3px, transparent 3px 8px),
+             repeating-linear-gradient(0deg, rgba(155,255,233,.06) 0 3px, transparent 3px 8px);
+  animation:dna-flow 12s linear infinite; pointer-events:none;
+}
+@keyframes dna-flow{to{transform:translateY(30px)}}
+
+
+/* ---------- Projects: Netflix pixel N animation ---------- */
+.netflix-bg{position:relative; background:linear-gradient(180deg,#090909,#111);}
+.pixel-n{
+  position:absolute; right:18px; bottom:12px; width:72px; height:72px;
+  image-rendering:pixelated; transform:scale(1); filter: drop-shadow(0 0 8px rgba(255,0,0,.5));
+}
+.pixel-n::before{
+  /* Build a pixel 'N' using box-shadows */
+  content:""; display:block; width:6px; height:6px; background:#e50914;
+  box-shadow:
+    0 0 #e50914, 6px 0 #e50914, 12px 0 #e50914, 18px 0 #e50914,
+    0 6px #e50914, 18px 6px #e50914,
+    0 12px #e50914, 12px 12px #e50914, 18px 12px #e50914,
+    0 18px #e50914, 6px 18px #e50914, 18px 18px #e50914,
+    0 24px #e50914, 6px 24px #e50914, 12px 24px #e50914, 18px 24px #e50914,
+    0 30px #e50914, 18px 30px #e50914;
+  animation: n-glow 2.4s ease-in-out infinite;
+}
+@keyframes n-glow {
+  0%,100% { filter:brightness(1); }
+  50% { filter:brightness(1.6); }
+}
+
+
+
+/* ---------- Publications: refined pixel animations ---------- */
+
+/* Ambulance: separated from text, stays on a bottom "road" line */
+.hospital-anim{position:relative; overflow:hidden; padding-bottom:50px;}
+.hospital-anim::after{
+  content:"🚑"; font-size:28px; position:absolute; bottom:10px; left:-60px;
+  animation: ambulance-run 8s linear infinite;
+}
+@keyframes ambulance-run{0%{left:-60px}100%{left:110%}}
+
+/* Plane: multiple planes leaving left to right across top, not backwards */
+.plane-anim{position:relative; overflow:hidden; padding-top:40px;}
+.plane-anim::after, .plane-anim::before{
+  content:"✈"; font-size:26px; position:absolute; top:0; left:-40px; opacity:.8;
+}
+.plane-anim::after{animation:plane-fly1 12s linear infinite;}
+.plane-anim::before{animation:plane-fly2 18s linear infinite;}
+@keyframes plane-fly1{0%{left:-40px; top:0}100%{left:110%; top:-20px}}
+@keyframes plane-fly2{0%{left:-80px; top:20px}100%{left:110%; top:10px}}
+
+/* DNA helix: spaced background pattern, subtle scroll */
+.dna-anim{position:relative; overflow:hidden;}
+.dna-anim::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 25% 50%, rgba(108,180,255,.15) 0 3px, transparent 4px) 0 0/50px 30px,
+    radial-gradient(circle at 75% 50%, rgba(155,255,233,.15) 0 3px, transparent 4px) 25px 15px/50px 30px;
+  animation:dna-scroll 14s linear infinite;
+}
+@keyframes dna-scroll{to{transform:translateX(60px)}}
+
+
+/* Modal NYC photo scaling */
+.nyc-photo{max-width:320px; border-radius:8px;}
+
+/* Click me animation */
+.clickme{animation:clickpulse 1.8s infinite; color:#6cf; font-weight:bold}
+@keyframes clickpulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+/* Ambulance professional pixel style */
+.hospital-anim{position:relative; overflow:hidden; padding-bottom:60px}
+.hospital-anim::after{
+  content:"🚑"; font-size:36px; position:absolute; bottom:10px; left:-80px;
+  animation: ambulance-drive 9s linear infinite;
+}
+@keyframes ambulance-drive{0%{left:-80px}100%{left:110%}}
+
+/* DNA spiral animation */
+.dna-anim{position:relative; overflow:hidden; height:120px}
+.dna-anim::before, .dna-anim::after{
+  content:""; position:absolute; top:0; bottom:0; width:50%; background-repeat:repeat-y;
+  background-size:40px 40px;
+}
+.dna-anim::before{
+  left:0;
+  background-image: radial-gradient(circle at 20px 20px, #6cf 0 6px, transparent 7px);
+  animation: dna-left 4s linear infinite;
+}
+.dna-anim::after{
+  right:0;
+  background-image: radial-gradient(circle at 20px 20px, #9ff 0 6px, transparent 7px);
+  animation: dna-right 4s linear infinite;
+}
+@keyframes dna-left{to{background-position-y:40px}}
+@keyframes dna-right{to{background-position-y:-40px}}

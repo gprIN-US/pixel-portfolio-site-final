@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prerna Pixel Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a class="brand-link" href="https://www.linkedin.com/in/prerna-reddy-g-612b58344/" target="_blank" rel="noopener">PRERNA<span class="blink">_</span></a></div>
+    <nav>
+      <a href="#profile">Profile</a>
+      <a href="#about">You Must Know</a>
+      <a href="#hello">Say Hi</a>
+      <a href="#timeline">Now/Past/Future</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#volunteering">Volunteering</a>
+    </nav>
+  </header>
+
+  <!-- PROFILE / HERO -->
+  <section id="profile" class="section hero center rabbits-layer">
+    <div class="card pixel">
+      <img id="profile-img" class="profile-img" src="./assets/pixelcutie.png" alt="Profile (click to swap)" />
+      <div class="tiny-caption">👆 <span class="clickme">Click me</span></div>
+      <h3 class="roles-line">Graduate Student · Software Engineer · Data Analyst · Business Analyst</h3>
+      <p class="nyc-line">
+        New York man how I love <a id="nyc-link" href="#" class="link-nyc">New York</a>, I love it and I also happen to live there.
+      </p>
+    </div>
+  </section>
+
+  <!-- NYC MODAL -->
+  <div id="nyc-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="close-modal" aria-label="Close">&times;</button>
+      <img src="./assets/newyork.jpeg" alt="New York" />
+    </div>
+  </div>
+
+  <!-- "YOU MUST KNOW" with pixel rabbit background -->
+  <section id="about" class="section desc-section">
+    <h2 class="section-title">you must know:</h2>
+    <div class="desc-card">
+      <p>
+        I love coding and cooking equally mixing flavors, toppings, and creativity the same way I blend data into tech solutions.
+        In my free time, I cook and I eat; in my coding, I ate with the scores I’ve earned in my master’s.
+        I love upskilling, reading newsletters like <strong>TLDR Tech</strong>, <strong>Ben’s Bites</strong>, and <strong>Towards Data Science</strong>,
+        and diving into big questions from what consciousness really is to whether time itself runs in reverse.
+        Maybe one day my model will prove we’re not even asking the right questions yet.
+      </p>
+    </div>
+  </section>
+
+  <!-- SAY HI -->
+  <section id="hello" class="section center">
+    <a class="say-hi wobble" href="mailto:gprernareddy@gmail.com" aria-label="Email Prerna">SAY HI!</a>
+  </section>
+
+  <!-- TIMELINE: PRESENT / PAST / FUTURE -->
+  <section id="timeline" class="section">
+    <h2 class="section-title">My present · My past · My future</h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="present">My present</button>
+      <button class="tab-btn" data-tab="past">My past</button>
+      <button class="tab-btn" data-tab="future">My future</button>
+    </div>
+
+    <div class="tab-panels">
+      <article id="present" class="tab-panel show">
+        <p>
+          I’m a graduate student at <a href="https://www.buffalo.edu" target="_blank" rel="noopener">University at Buffalo</a>,
+          currently interning at <a href="https://chista.health" target="_blank" rel="noopener">Chista.Health</a> via
+          <strong>CDA 500: Experiential Learning</strong> (will graduate in <strong>December 2025</strong>).
+          I’m building an end to end pipeline to extract and normalize plan & formulary data from public insurance PDFs,
+          using hybrid parsing (regex + LLMs), multi-agent automation, and a React + SQL “Golden Layer” UI for searchable,
+          source-traceable benefits data.
+        </p>
+      </article>
+
+      <article id="past" class="tab-panel">
+        <ul class="bullet">
+          <li>
+            Data Analytics / Application Developer Intern at Accenture  
+            <a href="https://drive.google.com/file/d/1n9MFdZ6zBqu588PWaObyCmt_cslISNxZ/view?usp=share_link" target="_blank" rel="noopener">view certificate</a>
+          </li>
+          <li>
+            Research Intern (<a href="https://drive.google.com/file/d/1bl63jBw1IgeDWq1C-HMXDxEWcN0XjcTN/view?usp=share_link" target="_blank" rel="noopener">offer letter</a>) at the University of South Alabama;
+            co‑author of a book chapter: <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003517993-4/aero-metamorphosis-industry-6-0-prerna-reddy-ganga-kishor-kumar-reddy-kari-lippert-abhishek-ranjan" target="_blank" rel="noopener">Aero‑Metamorphosis & Industry 6.0</a>  
+            analyzed and transformed aerospace datasets; cleaned, integrated, and modeled multi‑source data to reveal system evolution insights.
+          </li>
+        </ul>
+      </article>
+
+      <article id="future" class="tab-panel future-bg">
+        <p>
+          In the near future, I see technology moving toward real‑time, self‑optimizing data systems, cloud‑native automation at scale,
+          and domain‑specific intelligence that goes beyond just AI. I’m particularly interested in how these developments will reshape
+          industries like healthcare, finance, and supply chain for example, predictive systems that integrate IoT data, or pipelines that
+          automatically monitor cost and performance. One of my interests is healthcare analytics, but more broadly, I want to be part of building
+          the next generation of intelligent, sustainable, and highly automated digital infrastructure.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section edu-section">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-card">
+      <div class="pixel-banner" aria-hidden="true">
+        <span>University at Buffalo • University at Buffalo •</span>
+      </div>
+      <div class="edu-text">
+        <p>MPS Data Science & Applications, University at Buffalo (UB)</p>
+        <p>Academic performance: <a href="https://drive.google.com/file/d/1jbBz9gKYzjGpK3SaH8eWK-O63LafjoAw/view?usp=sharing" target="_blank" rel="noopener">View record</a></p>
+        <p>B.E. / CS Osmania University, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects-section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project taxi-bg">
+      <h3><a href="https://github.com/gprIN-US/etl-nyc-taxi-airflow" target="_blank" rel="noopener">NYC Taxi ETL Pipeline</a></h3>
+      <p class="gh-desc" data-repo="gprIN-US/etl-nyc-taxi-airflow">Loading description from GitHub…</p>
+      <div class="road">
+        <div class="taxi"></div>
+        <div class="taxi delay"></div>
+      </div>
+    </div>
+
+    <div class="project companies-bg">
+      <h3><a href="https://github.com/gprIN-US/openfeed_full" target="_blank" rel="noopener">OpenFeed Streaming Feeds Platform</a></h3>
+      <p class="gh-desc" data-repo="gprIN-US/openfeed_full">Loading description from GitHub…</p>
+    </div>
+
+    <div class="project netflix-bg">
+      <h3><a href="https://github.com/gprIN-US?tab=repositories&q=netflix" target="_blank" rel="noopener">Netflix Rating Overlay (fun)</a></h3>
+      <p>A Tampermonkey userscript that displays IMDb ⭐ and Rotten Tomatoes 🍅 ratings directly on Netflix titles. See ratings in real time without leaving Netflix.</p>
+      
+    </div>
+  </section>
+
+  
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section publications-section">
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pub-card hospital-anim">
+      <h3><a href="https://www.taylorfrancis.com/books/edit/10.1201/9781003643166/society-5-0-biswaranjan-acharya-madhu-shukla-chandreyee-chowdhury-harish-garg" target="_blank" rel="noopener">Navigating the Pulse in Industry 6.0</a></h3>
+      <p>Healthcare access, infrastructure, and policy in India; telemedicine expansion and modernization initiatives toward broader coverage.</p>
+    </div>
+
+    <div class="pub-card plane-anim">
+      <h3><a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003517993-4/aero-metamorphosis-industry-6-0-prerna-reddy-ganga-kishor-kumar-reddy-kari-lippert-abhishek-ranjan" target="_blank" rel="noopener">Aero Metamorphosis in Industry 6.0</a></h3>
+      <p>Comparative study of models for aircraft adaptability; foundations for future reinforcement learning control on airframes.</p>
+    </div>
+
+    <div class="pub-card dna-anim">
+      <h3><a href="https://ieeexplore.ieee.org/document/10489654" target="_blank">Validation & Diagnosis of Cystic Fibrosis Prognosis (ICAIIHI 2023)</a></h3>
+      <p>Survey and evaluation across classical and modern models with a Gradient Boost Decision Trees approach for prognosis.</p>
+    </div>
+  </section>
+
+
+  <!-- VOLUNTEERING -->
+  <section id="volunteering" class="section vol-section">
+    <h2 class="section-title">Volunteering</h2>
+    <p>
+      Member International Student Advisory Council (UB). See the roster
+      <a href="https://www.buffalo.edu/international-student-services/about-us/international-student-advisory-council.current-members.html" target="_blank" rel="noopener">here</a>.
+    </p>
+    <div class="shirt-line">
+      <div class="shirt">UB</div>
+      <div class="shirt">UB</div>
+      <div class="shirt">UB</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <small>© Prerna • Built with love, pixels, and carrots.</small>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
