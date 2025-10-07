@@ -1,6 +1,6 @@
 # Pixel Portfolio (Vercel-ready)
 
-A tiny, animated, recruiter-friendly single-page site.
+A tiny, animated, friendly single-page site.
 
 ## Local preview
 
